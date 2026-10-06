@@ -2,11 +2,11 @@
 # Site de cours : Orchestration de conteneurs avec Kubernetes (k3s)
 # À personnaliser : site_name, site_url, repo_url, extra.matiere, nav
 # ---------------------------------------------------------------
-site_name: Kubernetes avec k3s
+site_name: Kubernetes By Haithem
 site_description: Cours et travaux pratiques – Master DevOps et Cloud Computing, ISET Tozeur
-site_url: https://ORGANISATION.github.io/kubernetes-k3s/
-repo_url: https://github.com/ORGANISATION/kubernetes-k3s
-repo_name: ORGANISATION/kubernetes-k3s
+site_url: https://H-Hafsi.github.io/Kubernetes-Training-Labs/
+repo_url: https://github.com/H-Hafsi/Kubernetes-Training-Labs
+repo_name: H-Hafsi/Kubernetes-Training-Labs
 copyright: © 2026 ISET Tozeur – Département Informatique
 
 theme:
