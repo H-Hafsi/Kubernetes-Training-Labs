@@ -9,7 +9,7 @@ hide:
 ## Syllabus { #syllabus }
 
 !!! info "Site en construction"
-    Les pages sont ajoutées au fil de l'avancement du cours. Les chapitres et labs sans lien sont à venir.
+    Toutes les pages existent ; celles marquées « Under construction » sont en cours de rédaction et seront complétées au fil de l'avancement du cours.
 
 ### Fiche d'identification
 
@@ -61,9 +61,9 @@ Concevoir, déployer, sécuriser et exploiter des applications cloud-native sur 
 
 | Chapitre | Contenu | Ressources |
 |---|---|---|
-| 1. Architecture de Kubernetes (AA1) | Du conteneur à l'orchestration, control plane, modèle déclaratif | [Cours](partie-1-fondations/ch01-architecture/cours.md) · [Lab 1.1 : Installer k3s](partie-1-fondations/ch01-architecture/lab-1-1-installer-k3s.md) · [Lab 1.2 : kubectl](partie-1-fondations/ch01-architecture/lab-1-2-kubectl.md) |
-| 2. Pods et Deployments (AA1, AA2) | Pods, ReplicaSets, Deployments, stratégies de mise à jour | À venir |
-| 3. Services et réseau (AA3) | Services, DNS interne, Ingress et Gateway API | À venir |
+| 1. Architecture de Kubernetes (AA1) | Du conteneur à l'orchestration, control plane, modèle déclaratif | [Cours](partie-1-fondations/ch01-architecture/cours.md) · [Lab 1.1 : Installer k3s et explorer le cluster](partie-1-fondations/ch01-architecture/lab-1-1-installer-k3s.md) · [Lab 1.2 : Prise en main de kubectl](partie-1-fondations/ch01-architecture/lab-1-2-kubectl.md) |
+| 2. Pods et Deployments (AA1, AA2) | Pods et cycle de vie, ReplicaSets, Deployments, stratégies de mise à jour, labels et sélecteurs | [Cours](partie-1-fondations/ch02-pods-deployments/cours.md) · [Lab 2.1 : Mon premier Pod](partie-1-fondations/ch02-pods-deployments/lab-2-1-premier-pod.md) · [Lab 2.2 : Deployments et mises à jour](partie-1-fondations/ch02-pods-deployments/lab-2-2-deployments-mises-a-jour.md) |
+| 3. Services et réseau (AA3) | Services (ClusterIP, NodePort, LoadBalancer), DNS interne, Ingress et Gateway API | [Cours](partie-1-fondations/ch03-services-reseau/cours.md) · [Lab 3.1 : Exposer une application](partie-1-fondations/ch03-services-reseau/lab-3-1-exposer-application.md) · [Lab 3.2 : Ingress avec Traefik](partie-1-fondations/ch03-services-reseau/lab-3-2-ingress-traefik.md) |
 | **Mini-projet 1** | Application web à deux niveaux | [Énoncé](partie-1-fondations/mini-projet-1.md) |
 
 #### Partie 2 : Configuration, données et sécurité (12 h) { #partie-2 }
@@ -72,30 +72,34 @@ Concevoir, déployer, sécuriser et exploiter des applications cloud-native sur 
 
 | Chapitre | Contenu | Ressources |
 |---|---|---|
-| 4. Configuration et ressources (AA4) | ConfigMaps, Secrets, requests et limits, ResourceQuotas, LimitRanges | À venir |
-| 5. Stockage (AA4) | Volumes, PV, PVC, StorageClass, StatefulSets | À venir |
-| 6. Workloads spécialisés (AA2) | Jobs, CronJobs, DaemonSets, patterns multi-conteneurs | À venir |
-| 7. Sécurité (AA4) | RBAC, ServiceAccounts, SecurityContext, Pod Security, NetworkPolicies | À venir |
-| **Mini-projet 2** | Application trois niveaux sécurisée et persistante | [Énoncé](partie-2-configuration-donnees-securite/mini-projet-2.md) |
+| 4. Configuration et ressources (AA4) | ConfigMaps, Secrets, variables d'environnement et volumes de configuration, requests et limits, ResourceQuotas, LimitRanges | [Cours](partie-2-configuration-donnees-securite/ch04-configuration-ressources/cours.md) · [Lab 4.1 : Externaliser la configuration](partie-2-configuration-donnees-securite/ch04-configuration-ressources/lab-4-1-externaliser-configuration.md) · [Lab 4.2 : Maîtriser les ressources](partie-2-configuration-donnees-securite/ch04-configuration-ressources/lab-4-2-maitriser-ressources.md) |
+| 5. Stockage (AA4) | Volumes, PV, PVC, StorageClass, StatefulSets, service headless | [Cours](partie-2-configuration-donnees-securite/ch05-stockage/cours.md) · [Lab 5.1 : Volumes persistants](partie-2-configuration-donnees-securite/ch05-stockage/lab-5-1-volumes-persistants.md) · [Lab 5.2 : Base de données avec StatefulSet](partie-2-configuration-donnees-securite/ch05-stockage/lab-5-2-base-donnees-statefulset.md) |
+| 6. Workloads spécialisés (AA2) | Jobs, CronJobs, DaemonSets, patterns multi-conteneurs (init, sidecar, ambassador) | [Cours](partie-2-configuration-donnees-securite/ch06-workloads-specialises/cours.md) · [Lab 6.1 : Jobs et CronJobs](partie-2-configuration-donnees-securite/ch06-workloads-specialises/lab-6-1-jobs-cronjobs.md) · [Lab 6.2 : Patterns multi-conteneurs](partie-2-configuration-donnees-securite/ch06-workloads-specialises/lab-6-2-patterns-multi-conteneurs.md) |
+| 7. Sécurité (AA4) | RBAC, ServiceAccounts, SecurityContext, Pod Security Standards, NetworkPolicies | [Cours](partie-2-configuration-donnees-securite/ch07-securite/cours.md) · [Lab 7.1 : RBAC](partie-2-configuration-donnees-securite/ch07-securite/lab-7-1-rbac.md) · [Lab 7.2 : Durcir un Pod](partie-2-configuration-donnees-securite/ch07-securite/lab-7-2-durcir-un-pod.md) · [Lab 7.3 : NetworkPolicies](partie-2-configuration-donnees-securite/ch07-securite/lab-7-3-networkpolicies.md) |
+| **Mini-projet 2** | Votre application trois niveaux, sécurisée et persistante | [Énoncé](partie-2-configuration-donnees-securite/mini-projet-2.md) |
 
 #### Partie 3 : Exploitation (9 h) { #partie-3 }
 
+[Présentation de la Partie 3](partie-3-exploitation/index.md)
+
 | Chapitre | Contenu | Ressources |
 |---|---|---|
-| 8. Administration du cluster k3s (AA1, AA5) | Haute disponibilité (etcd embarqué), sauvegarde, mise à jour, maintenance | À venir |
-| 9. Observabilité et dépannage (AA5, AA6) | Logs, probes, Prometheus, Grafana, alerting, diagnostic | À venir |
-| 10. Autoscaling et scheduling (AA6) | HPA, VPA, affinités, taints et tolerations, PodDisruptionBudget | À venir |
-| **Mini-projet 3** | Exploitation d'une application sous charge | À venir |
+| 8. Administration du cluster k3s (AA1, AA5) | Haute disponibilité avec etcd embarqué, sauvegarde et restauration, mise à jour de version, maintenance des nœuds | [Cours](partie-3-exploitation/ch08-administration-cluster/cours.md) · [Lab 8.1 : Cluster HA](partie-3-exploitation/ch08-administration-cluster/lab-8-1-cluster-ha.md) · [Lab 8.2 : Sauvegarde, restauration et mise à jour](partie-3-exploitation/ch08-administration-cluster/lab-8-2-sauvegarde-restauration-mise-a-jour.md) |
+| 9. Observabilité et dépannage (AA5, AA6) | Logs, événements, probes, métriques, Prometheus, Grafana, alerting, méthodologie de diagnostic | [Cours](partie-3-exploitation/ch09-observabilite-depannage/cours.md) · [Lab 9.1 : Probes](partie-3-exploitation/ch09-observabilite-depannage/lab-9-1-probes.md) · [Lab 9.2 : Monitoring](partie-3-exploitation/ch09-observabilite-depannage/lab-9-2-monitoring.md) · [Lab 9.3 : Dépannage](partie-3-exploitation/ch09-observabilite-depannage/lab-9-3-depannage.md) |
+| 10. Autoscaling et scheduling (AA6) | HPA, VPA, affinités, taints et tolerations, PodDisruptionBudget | [Cours](partie-3-exploitation/ch10-autoscaling-scheduling/cours.md) · [Lab 10.1 : HPA](partie-3-exploitation/ch10-autoscaling-scheduling/lab-10-1-hpa.md) · [Lab 10.2 : Placement](partie-3-exploitation/ch10-autoscaling-scheduling/lab-10-2-placement.md) |
+| **Mini-projet 3** | Exploitation d'une application sous charge | [Énoncé](partie-3-exploitation/mini-projet-3.md) |
 
 #### Partie 4 : Industrialisation (15 h) { #partie-4 }
 
+[Présentation de la Partie 4](partie-4-industrialisation/index.md)
+
 | Chapitre | Contenu | Ressources |
 |---|---|---|
-| 11. Helm et Kustomize (AA7) | Charts, values, releases, overlays | À venir |
-| 12. CI/CD et GitOps (AA7) | Pipeline, registre d'images, Argo CD | À venir |
-| 13. Cloud managé et haute disponibilité (AA8) | AKS, EKS, responsabilité partagée, coûts, TLS | À venir |
-| 14. Extensibilité (AA8) | CRD, opérateurs, service mesh (aperçu) | À venir |
-| 15. Projet fil rouge et synthèse (AA1 à AA8) | Application microservices complète, soutenance | À venir |
+| 11. Helm et Kustomize (AA7) | Charts, values, releases, templates, overlays Kustomize | [Cours](partie-4-industrialisation/ch11-helm-kustomize/cours.md) · [Lab 11.1 : Utiliser Helm](partie-4-industrialisation/ch11-helm-kustomize/lab-11-1-utiliser-helm.md) · [Lab 11.2 : Packager son application](partie-4-industrialisation/ch11-helm-kustomize/lab-11-2-packager-application.md) |
+| 12. CI/CD et GitOps (AA7) | Pipeline de build et de livraison, registre d'images, principes GitOps, Argo CD | [Cours](partie-4-industrialisation/ch12-cicd-gitops/cours.md) · [Lab 12.1 : Pipeline CI](partie-4-industrialisation/ch12-cicd-gitops/lab-12-1-pipeline-ci.md) · [Lab 12.2 : GitOps avec Argo CD](partie-4-industrialisation/ch12-cicd-gitops/lab-12-2-gitops-argocd.md) |
+| 13. Cloud managé et haute disponibilité (AA8) | Kubernetes managé (AKS, EKS), modèle de responsabilité partagée, coûts, TLS et exposition publique | [Cours](partie-4-industrialisation/ch13-cloud-manage-ha/cours.md) · [Lab 13.1 : Cluster sur VMs cloud](partie-4-industrialisation/ch13-cloud-manage-ha/lab-13-1-cluster-vms-cloud.md) · [Lab 13.2 : Exposition publique](partie-4-industrialisation/ch13-cloud-manage-ha/lab-13-2-exposition-publique.md) |
+| 14. Extensibilité (AA8) | CRD, opérateurs, service mesh (aperçu) | [Cours](partie-4-industrialisation/ch14-extensibilite/cours.md) · [Lab 14.1 : CRD et opérateur](partie-4-industrialisation/ch14-extensibilite/lab-14-1-crd-operateur.md) · [Lab 14.2 : Découverte du service mesh](partie-4-industrialisation/ch14-extensibilite/lab-14-2-service-mesh.md) |
+| 15. Projet fil rouge et synthèse (AA1 à AA8) | Application microservices complète, soutenance | [Synthèse](partie-4-industrialisation/ch15-projet-fil-rouge/synthese.md) · [Projet fil rouge](partie-4-industrialisation/ch15-projet-fil-rouge/projet-fil-rouge.md) |
 
 ### Méthodes pédagogiques
 

@@ -4,17 +4,17 @@
 # ---------------------------------------------------------------
 site_name: Kubernetes avec k3s
 site_description: Cours et travaux pratiques – Master DevOps et Cloud Computing, ISET Tozeur
-site_url: https://ORGANISATION.github.io/kubernetes-k3s/
-repo_url: https://github.com/ORGANISATION/kubernetes-k3s
-repo_name: ORGANISATION/kubernetes-k3s
+site_url: https://h-hafsi.github.io/Kubernetes-Training-Labs/
+repo_url: https://github.com/H-Hafsi/Kubernetes-Training-Labs
+repo_name: H-Hafsi/Kubernetes-Training-Labs
 copyright: © 2026 ISET Tozeur – Département Informatique
 
 theme:
   name: material
   custom_dir: overrides
   language: fr
-  logo: assets/img/logo-iset.svg
-  favicon: assets/img/logo-iset.svg
+  logo: assets/img/logoisett.png
+  favicon: assets/img/logoisett.png
   font:
     text: Source Sans 3
     code: JetBrains Mono
@@ -75,17 +75,82 @@ extra:
       - { valeur: "4", libelle: "parties" }
       - { valeur: "k3s", libelle: "cluster de TP" }
 
+# Remplacer la section 'nav:' de mkdocs.yml par ce bloc (jusqu'à la fin du fichier)
 nav:
   - Syllabus: index.md
-  - Partie 1 – Fondations:
+  - "Partie 1 – Fondations":
       - partie-1-fondations/index.md
-      - Chapitre 1 – Architecture:
+      - "Chapitre 1 – Architecture de Kubernetes":
           - Cours: partie-1-fondations/ch01-architecture/cours.md
-          - Lab 1.1 – Installer k3s: partie-1-fondations/ch01-architecture/lab-1-1-installer-k3s.md
-          - Lab 1.2 – kubectl: partie-1-fondations/ch01-architecture/lab-1-2-kubectl.md
+          - "Lab 1.1 – Installer k3s et explorer le cluster": partie-1-fondations/ch01-architecture/lab-1-1-installer-k3s.md
+          - "Lab 1.2 – Prise en main de kubectl": partie-1-fondations/ch01-architecture/lab-1-2-kubectl.md
+      - "Chapitre 2 – Pods et Deployments":
+          - Cours: partie-1-fondations/ch02-pods-deployments/cours.md
+          - "Lab 2.1 – Mon premier Pod": partie-1-fondations/ch02-pods-deployments/lab-2-1-premier-pod.md
+          - "Lab 2.2 – Deployments et mises à jour": partie-1-fondations/ch02-pods-deployments/lab-2-2-deployments-mises-a-jour.md
+      - "Chapitre 3 – Services et réseau":
+          - Cours: partie-1-fondations/ch03-services-reseau/cours.md
+          - "Lab 3.1 – Exposer une application": partie-1-fondations/ch03-services-reseau/lab-3-1-exposer-application.md
+          - "Lab 3.2 – Ingress avec Traefik": partie-1-fondations/ch03-services-reseau/lab-3-2-ingress-traefik.md
       - Mini-projet 1: partie-1-fondations/mini-projet-1.md
-  - Partie 2 – Configuration, données, sécurité:
+  - "Partie 2 – Configuration, données et sécurité":
       - partie-2-configuration-donnees-securite/index.md
+      - "Chapitre 4 – Configuration et ressources":
+          - Cours: partie-2-configuration-donnees-securite/ch04-configuration-ressources/cours.md
+          - "Lab 4.1 – Externaliser la configuration": partie-2-configuration-donnees-securite/ch04-configuration-ressources/lab-4-1-externaliser-configuration.md
+          - "Lab 4.2 – Maîtriser les ressources": partie-2-configuration-donnees-securite/ch04-configuration-ressources/lab-4-2-maitriser-ressources.md
+      - "Chapitre 5 – Stockage":
+          - Cours: partie-2-configuration-donnees-securite/ch05-stockage/cours.md
+          - "Lab 5.1 – Volumes persistants": partie-2-configuration-donnees-securite/ch05-stockage/lab-5-1-volumes-persistants.md
+          - "Lab 5.2 – Base de données avec StatefulSet": partie-2-configuration-donnees-securite/ch05-stockage/lab-5-2-base-donnees-statefulset.md
+      - "Chapitre 6 – Workloads spécialisés":
+          - Cours: partie-2-configuration-donnees-securite/ch06-workloads-specialises/cours.md
+          - "Lab 6.1 – Jobs et CronJobs": partie-2-configuration-donnees-securite/ch06-workloads-specialises/lab-6-1-jobs-cronjobs.md
+          - "Lab 6.2 – Patterns multi-conteneurs": partie-2-configuration-donnees-securite/ch06-workloads-specialises/lab-6-2-patterns-multi-conteneurs.md
+      - "Chapitre 7 – Sécurité":
+          - Cours: partie-2-configuration-donnees-securite/ch07-securite/cours.md
+          - "Lab 7.1 – RBAC": partie-2-configuration-donnees-securite/ch07-securite/lab-7-1-rbac.md
+          - "Lab 7.2 – Durcir un Pod": partie-2-configuration-donnees-securite/ch07-securite/lab-7-2-durcir-un-pod.md
+          - "Lab 7.3 – NetworkPolicies": partie-2-configuration-donnees-securite/ch07-securite/lab-7-3-networkpolicies.md
       - Mini-projet 2: partie-2-configuration-donnees-securite/mini-projet-2.md
+  - "Partie 3 – Exploitation":
+      - partie-3-exploitation/index.md
+      - "Chapitre 8 – Administration du cluster k3s":
+          - Cours: partie-3-exploitation/ch08-administration-cluster/cours.md
+          - "Lab 8.1 – Cluster HA": partie-3-exploitation/ch08-administration-cluster/lab-8-1-cluster-ha.md
+          - "Lab 8.2 – Sauvegarde, restauration et mise à jour": partie-3-exploitation/ch08-administration-cluster/lab-8-2-sauvegarde-restauration-mise-a-jour.md
+      - "Chapitre 9 – Observabilité et dépannage":
+          - Cours: partie-3-exploitation/ch09-observabilite-depannage/cours.md
+          - "Lab 9.1 – Probes": partie-3-exploitation/ch09-observabilite-depannage/lab-9-1-probes.md
+          - "Lab 9.2 – Monitoring": partie-3-exploitation/ch09-observabilite-depannage/lab-9-2-monitoring.md
+          - "Lab 9.3 – Dépannage": partie-3-exploitation/ch09-observabilite-depannage/lab-9-3-depannage.md
+      - "Chapitre 10 – Autoscaling et scheduling":
+          - Cours: partie-3-exploitation/ch10-autoscaling-scheduling/cours.md
+          - "Lab 10.1 – HPA": partie-3-exploitation/ch10-autoscaling-scheduling/lab-10-1-hpa.md
+          - "Lab 10.2 – Placement": partie-3-exploitation/ch10-autoscaling-scheduling/lab-10-2-placement.md
+      - Mini-projet 3: partie-3-exploitation/mini-projet-3.md
+  - "Partie 4 – Industrialisation":
+      - partie-4-industrialisation/index.md
+      - "Chapitre 11 – Helm et Kustomize":
+          - Cours: partie-4-industrialisation/ch11-helm-kustomize/cours.md
+          - "Lab 11.1 – Utiliser Helm": partie-4-industrialisation/ch11-helm-kustomize/lab-11-1-utiliser-helm.md
+          - "Lab 11.2 – Packager son application": partie-4-industrialisation/ch11-helm-kustomize/lab-11-2-packager-application.md
+      - "Chapitre 12 – CI/CD et GitOps":
+          - Cours: partie-4-industrialisation/ch12-cicd-gitops/cours.md
+          - "Lab 12.1 – Pipeline CI": partie-4-industrialisation/ch12-cicd-gitops/lab-12-1-pipeline-ci.md
+          - "Lab 12.2 – GitOps avec Argo CD": partie-4-industrialisation/ch12-cicd-gitops/lab-12-2-gitops-argocd.md
+      - "Chapitre 13 – Cloud managé et haute disponibilité":
+          - Cours: partie-4-industrialisation/ch13-cloud-manage-ha/cours.md
+          - "Lab 13.1 – Cluster sur VMs cloud": partie-4-industrialisation/ch13-cloud-manage-ha/lab-13-1-cluster-vms-cloud.md
+          - "Lab 13.2 – Exposition publique": partie-4-industrialisation/ch13-cloud-manage-ha/lab-13-2-exposition-publique.md
+      - "Chapitre 14 – Extensibilité":
+          - Cours: partie-4-industrialisation/ch14-extensibilite/cours.md
+          - "Lab 14.1 – CRD et opérateur": partie-4-industrialisation/ch14-extensibilite/lab-14-1-crd-operateur.md
+          - "Lab 14.2 – Découverte du service mesh": partie-4-industrialisation/ch14-extensibilite/lab-14-2-service-mesh.md
+      - "Chapitre 15 – Projet fil rouge et synthèse":
+          - Synthèse: partie-4-industrialisation/ch15-projet-fil-rouge/synthese.md
+          - Projet fil rouge: partie-4-industrialisation/ch15-projet-fil-rouge/projet-fil-rouge.md
   - Annexes:
       - Environnement VMware: annexes/environnement-vmware.md
+      - Aide-mémoire kubectl: annexes/aide-memoire-kubectl.md
+      - Glossaire: annexes/glossaire.md
