@@ -1,0 +1,102 @@
+/* =========================================================
+   Charte graphique de la matière
+   Pour changer de style : modifier uniquement ce bloc.
+   ========================================================= */
+:root {
+  --matiere-principal: #0b2a4a;   /* bleu nuit : en-tête, titres */
+  --matiere-accent:    #326ce5;   /* bleu vif : liens, boutons */
+  --matiere-clair:     #eaf1fd;   /* fonds légers */
+  --matiere-trait:     #8db4ff;   /* traits sur fond sombre */
+  --matiere-degrade: linear-gradient(135deg, #0b2a4a 0%, #123f73 55%, #326ce5 100%);
+}
+
+:root > * {
+  --md-primary-fg-color:        #0b2a4a;
+  --md-primary-fg-color--light: #27456b;
+  --md-primary-fg-color--dark:  #071b32;
+  --md-primary-bg-color:        #ffffff;
+  --md-primary-bg-color--light: #dfe8f5;
+  --md-accent-fg-color:         #326ce5;
+  --md-typeset-a-color:         #1f55c4;
+}
+
+/* En-tête : logo sur pastille blanche (lisible quel que soit le logo) */
+.md-header { border-bottom: 3px solid var(--matiere-accent); }
+.md-header__button.md-logo {
+  background: #fff;
+  border-radius: 6px;
+  padding: .15rem .35rem;
+  margin: .35rem .4rem .35rem .2rem;
+}
+.md-header__button.md-logo img { height: 1.6rem; width: auto; }
+
+/* Typographie des contenus */
+.md-typeset h1 { color: var(--matiere-principal); font-weight: 700; letter-spacing: -.01em; }
+.md-typeset h2 {
+  color: var(--matiere-principal);
+  font-weight: 700;
+  border-bottom: 2px solid var(--matiere-clair);
+  padding-bottom: .3rem;
+}
+.md-typeset h3 { color: #1b3b63; font-weight: 600; }
+
+/* Tableaux */
+.md-typeset table:not([class]) {
+  font-size: .72rem;
+  border: 1px solid #d5e0f0;
+  border-radius: 6px;
+  box-shadow: none;
+}
+.md-typeset table:not([class]) th {
+  background: var(--matiere-principal);
+  color: #fff;
+  font-weight: 600;
+}
+.md-typeset table:not([class]) tbody tr:nth-child(even) { background: #f6f9fe; }
+
+/* Boutons */
+.md-typeset .md-button--primary {
+  background-color: var(--matiere-accent);
+  border-color: var(--matiere-accent);
+}
+
+/* Cases à cocher (points de contrôle) */
+.md-typeset .task-list-control .task-list-indicator::before { background-color: var(--matiere-accent); }
+
+/* =========================================================
+   Page d'accueil (bannière)
+   ========================================================= */
+.hero { background: var(--matiere-degrade); color: #fff; position: relative; overflow: hidden; }
+.hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: url("../img/banniere.svg") center / cover no-repeat;
+  opacity: .6;
+}
+.hero__inner {
+  position: relative;
+  display: flex; gap: 2rem; align-items: center; justify-content: space-between;
+  padding: 3rem .8rem;
+}
+.hero__etiquette {
+  text-transform: uppercase; letter-spacing: .12em;
+  font-size: .68rem; opacity: .9; margin: 0;
+}
+.hero h1 { color: #fff; font-size: 2.2rem; font-weight: 700; margin: .4rem 0 .6rem; line-height: 1.2; }
+.hero__sous-titre { font-size: .95rem; opacity: .95; max-width: 34rem; margin: 0 0 1.2rem; }
+.hero .md-button { color: #fff; border-color: #fff; }
+.hero .md-button--primary { background: #fff; color: var(--matiere-principal); border-color: #fff; }
+.hero .md-button:hover { background: rgba(255,255,255,.18); color: #fff; border-color: #fff; }
+.hero .md-button--primary:hover { background: var(--matiere-clair); color: var(--matiere-principal); }
+.hero__chiffres { display: flex; gap: 1.6rem; flex-wrap: wrap; list-style: none; margin: 1.6rem 0 0; padding: 0; }
+.hero__chiffres li { display: flex; flex-direction: column; border-left: 3px solid var(--matiere-trait); padding-left: .7rem; }
+.hero__chiffres strong { font-size: 1.4rem; line-height: 1.1; }
+.hero__chiffres span { font-size: .68rem; opacity: .9; }
+.hero__logo { background: #fff; border-radius: 12px; padding: 1rem 1.2rem; flex: 0 0 auto; }
+.hero__logo img { display: block; height: 5rem; width: auto; }
+
+@media (max-width: 44.9375em) {
+  .hero__inner { flex-direction: column; align-items: flex-start; padding: 2rem .8rem; }
+  .hero h1 { font-size: 1.7rem; }
+  .hero__logo img { height: 3.5rem; }
+}
