@@ -1,0 +1,26 @@
+{% extends "main.html" %}
+
+{% block hero %}
+  {% set m = config.extra.matiere %}
+  <section class="hero">
+    <div class="md-grid hero__inner">
+      <div class="hero__texte">
+        <p class="hero__etiquette">{{ m.etiquette }}</p>
+        <h1>{{ m.titre }}</h1>
+        <p class="hero__sous-titre">{{ m.sous_titre }}</p>
+        <div class="hero__boutons">
+          <a href="#syllabus" class="md-button md-button--primary">Voir le syllabus</a>
+          <a href="{{ m.premier_lien | url }}" class="md-button">Commencer le cours</a>
+        </div>
+        <ul class="hero__chiffres">
+          {% for c in m.chiffres %}
+          <li><strong>{{ c.valeur }}</strong><span>{{ c.libelle }}</span></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="hero__logo">
+        <img src="{{ 'assets/img/logo-iset.svg' | url }}" alt="ISET Tozeur">
+      </div>
+    </div>
+  </section>
+{% endblock %}

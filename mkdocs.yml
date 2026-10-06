@@ -1,0 +1,91 @@
+# ---------------------------------------------------------------
+# Site de cours : Orchestration de conteneurs avec Kubernetes (k3s)
+# À personnaliser : site_name, site_url, repo_url, extra.matiere, nav
+# ---------------------------------------------------------------
+site_name: Kubernetes avec k3s
+site_description: Cours et travaux pratiques – Master DevOps et Cloud Computing, ISET Tozeur
+site_url: https://ORGANISATION.github.io/kubernetes-k3s/
+repo_url: https://github.com/ORGANISATION/kubernetes-k3s
+repo_name: ORGANISATION/kubernetes-k3s
+copyright: © 2026 ISET Tozeur – Département Informatique
+
+theme:
+  name: material
+  custom_dir: overrides
+  language: fr
+  logo: assets/img/logo-iset.svg
+  favicon: assets/img/logo-iset.svg
+  font:
+    text: Source Sans 3
+    code: JetBrains Mono
+  palette:
+    scheme: default
+    primary: custom
+    accent: custom
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.indexes
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+    - toc.follow
+
+extra_css:
+  - assets/css/extra.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+plugins:
+  - search:
+      lang: fr
+
+# Textes de la page d'accueil (voir overrides/home.html)
+extra:
+  matiere:
+    etiquette: Master DevOps et Cloud Computing · ISET Tozeur
+    titre: Orchestration de conteneurs avec Kubernetes
+    sous_titre: Concevoir, déployer, sécuriser et exploiter des applications cloud-native sur un cluster k3s, selon les pratiques DevOps et GitOps.
+    premier_lien: partie-1-fondations/ch01-architecture/cours/
+    chiffres:
+      - { valeur: "45 h", libelle: "de formation" }
+      - { valeur: "3", libelle: "crédits ECTS" }
+      - { valeur: "4", libelle: "parties" }
+      - { valeur: "k3s", libelle: "cluster de TP" }
+
+nav:
+  - Syllabus: index.md
+  - Partie 1 – Fondations:
+      - partie-1-fondations/index.md
+      - Chapitre 1 – Architecture:
+          - Cours: partie-1-fondations/ch01-architecture/cours.md
+          - Lab 1.1 – Installer k3s: partie-1-fondations/ch01-architecture/lab-1-1-installer-k3s.md
+          - Lab 1.2 – kubectl: partie-1-fondations/ch01-architecture/lab-1-2-kubectl.md
+      - Mini-projet 1: partie-1-fondations/mini-projet-1.md
+  - Partie 2 – Configuration, données, sécurité:
+      - partie-2-configuration-donnees-securite/index.md
+      - Mini-projet 2: partie-2-configuration-donnees-securite/mini-projet-2.md
+  - Annexes:
+      - Environnement VMware: annexes/environnement-vmware.md
