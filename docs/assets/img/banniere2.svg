@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="100%">
+  <defs>
+    <!-- Fond principal : très sombre à gauche vers bleu indigo/cyan Kubernetes à droite -->
+    <linearGradient id="bgGradK8s" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#020617" stop-opacity="0.98" />
+      <stop offset="45%" stop-color="#0f172a" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#1e1b4b" stop-opacity="0.85" />
+    </linearGradient>
+
+    <!-- Masque d'assombrissement renforcé à gauche pour le texte -->
+    <linearGradient id="leftDarkenK8s" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#020617" stop-opacity="0.95" />
+      <stop offset="50%" stop-color="#020617" stop-opacity="0.65" />
+      <stop offset="100%" stop-color="#020617" stop-opacity="0.0" />
+    </linearGradient>
+
+    <!-- Grille de fond technologique -->
+    <pattern id="gridPatternK8s" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#312e81" stroke-width="0.5" stroke-opacity="0.25"/>
+    </pattern>
+  </defs>
+
+  <!-- Arrière-plan -->
+  <rect width="1200" height="400" fill="url(#bgGradK8s)" />
+  <rect width="1200" height="400" fill="url(#gridPatternK8s)" />
+
+  <!-- Lignes de Service Mesh / Réseau Kubernetes -->
+  <g stroke="#3b82f6" stroke-width="1.2" stroke-dasharray="5,5" opacity="0.3">
+    <path d="M 100 200 C 280 100, 380 300, 560 150 S 800 250, 950 160 L 1150 200" fill="none" />
+    <path d="M 50 280 C 250 350, 450 80, 700 220 S 950 80, 1100 300" fill="none" stroke="#60a5fa" />
+  </g>
+
+  <!-- Représentation du Cluster Kubernetes (Nœuds / Control Plane isométriques) -->
+  
+  <!-- Control Plane Node (Centre supérieur) -->
+  <g transform="translate(850, 110)">
+    <polygon points="0,-30 50,-55 100,-30 50,-5" fill="#3b82f6" opacity="0.85" />
+    <polygon points="0,-30 50,-5 50,50 0,25" fill="#2563eb" opacity="0.9" />
+    <polygon points="50,-5 100,-30 100,25 50,50" fill="#1d4ed8" opacity="0.95" />
+    <circle cx="50" cy="-30" r="10" fill="#93c5fd" opacity="0.7"/>
+  </g>
+
+  <!-- Worker Node 1 (Gauche du cluster) -->
+  <g transform="translate(710, 190)">
+    <polygon points="0,-25 40,-45 80,-25 40,-5" fill="#60a5fa" opacity="0.8" />
+    <polygon points="0,-25 40,-5 40,40 0,20" fill="#3b82f6" opacity="0.85" />
+    <polygon points="40,-5 80,-25 80,20 40,40" fill="#2563eb" opacity="0.9" />
+  </g>
+
+  <!-- Worker Node 2 (Droite du cluster) -->
+  <g transform="translate(980, 200)">
+    <polygon points="0,-25 40,-45 80,-25 40,-5" fill="#93c5fd" opacity="0.8" />
+    <polygon points="0,-25 40,-5 40,40 0,20" fill="#60a5fa" opacity="0.85" />
+    <polygon points="40,-5 80,-25 80,20 40,40" fill="#3b82f6" opacity="0.9" />
+  </g>
+
+  <!-- Pods et points lumineux du réseau -->
+  <g fill="#60a5fa">
+    <circle cx="530" cy="170" r="6" fill="#3b82f6" opacity="0.9"/>
+    <circle cx="530" cy="170" r="16" fill="none" stroke="#3b82f6" stroke-width="1.5" opacity="0.4"/>
+    
+    <circle cx="700" cy="100" r="5" fill="#93c5fd" opacity="0.8"/>
+    <circle cx="1080" cy="240" r="6" fill="#3b82f6" opacity="0.8"/>
+  </g>
+
+  <!-- Calque d'assombrissement final appliqué à gauche pour détacher le texte -->
+  <rect width="1200" height="400" fill="url(#leftDarkenK8s)" />
+</svg>

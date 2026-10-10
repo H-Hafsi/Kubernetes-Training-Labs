@@ -1,4 +1,95 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-<g stroke="#ffffff" stroke-opacity=".18" stroke-width="1.2"><line x1="663" y1="77" x2="856" y2="35"/><line x1="663" y1="77" x2="492" y2="46"/><line x1="663" y1="77" x2="812" y2="25"/><line x1="663" y1="77" x2="452" y2="23"/><line x1="663" y1="77" x2="593" y2="214"/><line x1="663" y1="77" x2="631" y2="286"/><line x1="663" y1="77" x2="613" y2="127"/><line x1="663" y1="77" x2="614" y2="268"/><line x1="808" y1="333" x2="748" y2="298"/><line x1="808" y1="333" x2="631" y2="286"/><line x1="808" y1="333" x2="1016" y2="348"/><line x1="808" y1="333" x2="953" y2="299"/><line x1="808" y1="333" x2="928" y2="185"/><line x1="808" y1="333" x2="614" y2="268"/><line x1="808" y1="333" x2="589" y2="311"/><line x1="98" y1="37" x2="118" y2="259"/><line x1="98" y1="37" x2="176" y2="222"/><line x1="98" y1="37" x2="253" y2="114"/><line x1="98" y1="37" x2="149" y2="60"/><line x1="1097" y1="48" x2="1128" y2="217"/><line x1="1097" y1="48" x2="1193" y2="31"/><line x1="1097" y1="48" x2="1140" y2="68"/><line x1="1097" y1="48" x2="1155" y2="30"/><line x1="1097" y1="48" x2="1267" y2="105"/><line x1="1097" y1="48" x2="1088" y2="218"/><line x1="1097" y1="48" x2="928" y2="185"/><line x1="1097" y1="48" x2="1013" y2="175"/><line x1="1097" y1="48" x2="1048" y2="214"/><line x1="748" y1="298" x2="593" y2="214"/><line x1="748" y1="298" x2="631" y2="286"/><line x1="748" y1="298" x2="953" y2="299"/><line x1="748" y1="298" x2="928" y2="185"/><line x1="748" y1="298" x2="613" y2="127"/><line x1="748" y1="298" x2="614" y2="268"/><line x1="748" y1="298" x2="589" y2="311"/><line x1="118" y1="259" x2="176" y2="222"/><line x1="118" y1="259" x2="121" y2="289"/><line x1="118" y1="259" x2="253" y2="114"/><line x1="118" y1="259" x2="295" y2="276"/><line x1="118" y1="259" x2="241" y2="292"/><line x1="118" y1="259" x2="211" y2="297"/><line x1="118" y1="259" x2="199" y2="280"/><line x1="118" y1="259" x2="167" y2="294"/><line x1="118" y1="259" x2="149" y2="60"/><line x1="439" y1="19" x2="492" y2="46"/><line x1="439" y1="19" x2="253" y2="114"/><line x1="439" y1="19" x2="452" y2="23"/><line x1="439" y1="19" x2="384" y2="190"/><line x1="439" y1="19" x2="613" y2="127"/><line x1="176" y1="222" x2="121" y2="289"/><line x1="176" y1="222" x2="253" y2="114"/><line x1="176" y1="222" x2="295" y2="276"/><line x1="176" y1="222" x2="241" y2="292"/><line x1="176" y1="222" x2="211" y2="297"/><line x1="176" y1="222" x2="384" y2="190"/><line x1="176" y1="222" x2="199" y2="280"/><line x1="176" y1="222" x2="167" y2="294"/><line x1="176" y1="222" x2="149" y2="60"/><line x1="856" y1="35" x2="812" y2="25"/><line x1="856" y1="35" x2="928" y2="185"/><line x1="856" y1="35" x2="1013" y2="175"/><line x1="492" y1="46" x2="452" y2="23"/><line x1="492" y1="46" x2="593" y2="214"/><line x1="492" y1="46" x2="384" y2="190"/><line x1="492" y1="46" x2="613" y2="127"/><line x1="1128" y1="217" x2="1291" y2="321"/><line x1="1128" y1="217" x2="1193" y2="31"/><line x1="1128" y1="217" x2="1181" y2="299"/><line x1="1128" y1="217" x2="1140" y2="68"/><line x1="1128" y1="217" x2="1169" y2="327"/><line x1="1128" y1="217" x2="1155" y2="30"/><line x1="1128" y1="217" x2="1267" y2="105"/><line x1="1128" y1="217" x2="1016" y2="348"/><line x1="1128" y1="217" x2="1088" y2="218"/><line x1="1128" y1="217" x2="953" y2="299"/><line x1="1128" y1="217" x2="928" y2="185"/><line x1="1128" y1="217" x2="1013" y2="175"/><line x1="1128" y1="217" x2="1048" y2="214"/><line x1="121" y1="289" x2="253" y2="114"/><line x1="121" y1="289" x2="295" y2="276"/><line x1="121" y1="289" x2="241" y2="292"/><line x1="121" y1="289" x2="211" y2="297"/><line x1="121" y1="289" x2="199" y2="280"/><line x1="121" y1="289" x2="167" y2="294"/><line x1="253" y1="114" x2="452" y2="23"/><line x1="253" y1="114" x2="295" y2="276"/><line x1="253" y1="114" x2="241" y2="292"/><line x1="253" y1="114" x2="211" y2="297"/><line x1="253" y1="114" x2="384" y2="190"/><line x1="253" y1="114" x2="199" y2="280"/><line x1="253" y1="114" x2="167" y2="294"/><line x1="253" y1="114" x2="149" y2="60"/><line x1="1291" y1="321" x2="1181" y2="299"/><line x1="1291" y1="321" x2="1169" y2="327"/><line x1="1291" y1="321" x2="1267" y2="105"/><line x1="1291" y1="321" x2="1088" y2="218"/><line x1="1291" y1="321" x2="1493" y2="229"/><line x1="1193" y1="31" x2="1140" y2="68"/><line x1="1193" y1="31" x2="1396" y2="92"/><line x1="1193" y1="31" x2="1155" y2="30"/><line x1="1193" y1="31" x2="1267" y2="105"/><line x1="1193" y1="31" x2="1088" y2="218"/><line x1="1181" y1="299" x2="1169" y2="327"/><line x1="1181" y1="299" x2="1267" y2="105"/><line x1="1181" y1="299" x2="1016" y2="348"/><line x1="1181" y1="299" x2="1088" y2="218"/><line x1="1181" y1="299" x2="953" y2="299"/><line x1="1181" y1="299" x2="1013" y2="175"/><line x1="1181" y1="299" x2="1048" y2="214"/><line x1="812" y1="25" x2="928" y2="185"/><line x1="812" y1="25" x2="613" y2="127"/><line x1="452" y1="23" x2="384" y2="190"/><line x1="452" y1="23" x2="613" y2="127"/><line x1="1140" y1="68" x2="1155" y2="30"/><line x1="1140" y1="68" x2="1267" y2="105"/><line x1="1140" y1="68" x2="1088" y2="218"/><line x1="1140" y1="68" x2="1013" y2="175"/><line x1="1140" y1="68" x2="1048" y2="214"/><line x1="593" y1="214" x2="631" y2="286"/><line x1="593" y1="214" x2="384" y2="190"/><line x1="593" y1="214" x2="613" y2="127"/><line x1="593" y1="214" x2="614" y2="268"/><line x1="593" y1="214" x2="589" y2="311"/><line x1="295" y1="276" x2="241" y2="292"/><line x1="295" y1="276" x2="211" y2="297"/><line x1="295" y1="276" x2="384" y2="190"/><line x1="295" y1="276" x2="199" y2="280"/><line x1="295" y1="276" x2="368" y2="357"/><line x1="295" y1="276" x2="167" y2="294"/><line x1="241" y1="292" x2="211" y2="297"/><line x1="241" y1="292" x2="384" y2="190"/><line x1="241" y1="292" x2="199" y2="280"/><line x1="241" y1="292" x2="368" y2="357"/><line x1="241" y1="292" x2="167" y2="294"/><line x1="631" y1="286" x2="613" y2="127"/><line x1="631" y1="286" x2="614" y2="268"/><line x1="631" y1="286" x2="589" y2="311"/><line x1="1396" y1="92" x2="1458" y2="32"/><line x1="1396" y1="92" x2="1267" y2="105"/><line x1="1396" y1="92" x2="1591" y2="160"/><line x1="1396" y1="92" x2="1597" y2="124"/><line x1="1396" y1="92" x2="1493" y2="229"/><line x1="211" y1="297" x2="384" y2="190"/><line x1="211" y1="297" x2="199" y2="280"/><line x1="211" y1="297" x2="368" y2="357"/><line x1="211" y1="297" x2="167" y2="294"/><line x1="1169" y1="327" x2="1016" y2="348"/><line x1="1169" y1="327" x2="1088" y2="218"/><line x1="1169" y1="327" x2="953" y2="299"/><line x1="1169" y1="327" x2="1013" y2="175"/><line x1="1169" y1="327" x2="1048" y2="214"/><line x1="384" y1="190" x2="199" y2="280"/><line x1="384" y1="190" x2="368" y2="357"/><line x1="199" y1="280" x2="368" y2="357"/><line x1="199" y1="280" x2="167" y2="294"/><line x1="199" y1="280" x2="149" y2="60"/><line x1="1458" y1="32" x2="1267" y2="105"/><line x1="1458" y1="32" x2="1591" y2="160"/><line x1="1458" y1="32" x2="1597" y2="124"/><line x1="1458" y1="32" x2="1493" y2="229"/><line x1="1155" y1="30" x2="1267" y2="105"/><line x1="1155" y1="30" x2="1088" y2="218"/><line x1="1155" y1="30" x2="1013" y2="175"/><line x1="1155" y1="30" x2="1048" y2="214"/><line x1="1267" y1="105" x2="1088" y2="218"/><line x1="1016" y1="348" x2="1088" y2="218"/><line x1="1016" y1="348" x2="953" y2="299"/><line x1="1016" y1="348" x2="928" y2="185"/><line x1="1016" y1="348" x2="1013" y2="175"/><line x1="1016" y1="348" x2="1048" y2="214"/><line x1="1088" y1="218" x2="953" y2="299"/><line x1="1088" y1="218" x2="928" y2="185"/><line x1="1088" y1="218" x2="1013" y2="175"/><line x1="1088" y1="218" x2="1048" y2="214"/><line x1="1591" y1="160" x2="1597" y2="124"/><line x1="1591" y1="160" x2="1493" y2="229"/><line x1="953" y1="299" x2="928" y2="185"/><line x1="953" y1="299" x2="1013" y2="175"/><line x1="953" y1="299" x2="1048" y2="214"/><line x1="928" y1="185" x2="1013" y2="175"/><line x1="928" y1="185" x2="1048" y2="214"/><line x1="613" y1="127" x2="614" y2="268"/><line x1="613" y1="127" x2="589" y2="311"/><line x1="368" y1="357" x2="167" y2="294"/><line x1="368" y1="357" x2="589" y2="311"/><line x1="1597" y1="124" x2="1493" y2="229"/><line x1="614" y1="268" x2="589" y2="311"/><line x1="1013" y1="175" x2="1048" y2="214"/></g>
-<g fill="#ffffff" fill-opacity=".45"><circle cx="663" cy="77" r="3"/><circle cx="808" cy="333" r="4"/><circle cx="98" cy="37" r="3"/><circle cx="1097" cy="48" r="4"/><circle cx="748" cy="298" r="4"/><circle cx="118" cy="259" r="3"/><circle cx="439" cy="19" r="5"/><circle cx="176" cy="222" r="3"/><circle cx="856" cy="35" r="5"/><circle cx="492" cy="46" r="5"/><circle cx="1128" cy="217" r="4"/><circle cx="121" cy="289" r="4"/><circle cx="253" cy="114" r="5"/><circle cx="1291" cy="321" r="4"/><circle cx="1193" cy="31" r="5"/><circle cx="1181" cy="299" r="4"/><circle cx="812" cy="25" r="5"/><circle cx="452" cy="23" r="4"/><circle cx="1140" cy="68" r="3"/><circle cx="593" cy="214" r="3"/><circle cx="295" cy="276" r="4"/><circle cx="241" cy="292" r="4"/><circle cx="631" cy="286" r="5"/><circle cx="1396" cy="92" r="5"/><circle cx="211" cy="297" r="3"/><circle cx="1169" cy="327" r="3"/><circle cx="384" cy="190" r="5"/><circle cx="199" cy="280" r="5"/><circle cx="1458" cy="32" r="4"/><circle cx="1155" cy="30" r="5"/><circle cx="1267" cy="105" r="5"/><circle cx="1016" cy="348" r="5"/><circle cx="1088" cy="218" r="4"/><circle cx="1591" cy="160" r="4"/><circle cx="953" cy="299" r="5"/><circle cx="928" cy="185" r="4"/><circle cx="613" cy="127" r="5"/><circle cx="368" cy="357" r="4"/><circle cx="1597" cy="124" r="3"/><circle cx="167" cy="294" r="4"/><circle cx="614" cy="268" r="4"/><circle cx="1013" cy="175" r="3"/><circle cx="1493" cy="229" r="5"/><circle cx="589" cy="311" r="3"/><circle cx="149" cy="60" r="4"/><circle cx="1048" cy="214" r="3"/></g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="100%">
+  <defs>
+    <!-- Fond Gradient : Noir Ardoise à gauche vers Bleu Ultramarine / Indigo Kubernetes à droite -->
+    <linearGradient id="bgK8sDiff" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#020617" stop-opacity="0.98" />
+      <stop offset="40%" stop-color="#090d16" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#1e1b4b" stop-opacity="0.9" />
+    </linearGradient>
+
+    <!-- Gradient d'assombrissement renforcé sur toute la zone texte (gauche) -->
+    <linearGradient id="leftTextDarkener" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#020617" stop-opacity="0.98" />
+      <stop offset="50%" stop-color="#020617" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#020617" stop-opacity="0.0" />
+    </linearGradient>
+
+    <!-- Lueur lumineuse cyan/bleu autour du gouvernail -->
+    <radialGradient id="helmGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Motif de maillage d'orchestration (Réseau de pods) -->
+    <pattern id="k8sGrid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <circle cx="25" cy="25" r="1" fill="#4338ca" opacity="0.4"/>
+    </pattern>
+  </defs>
+
+  <!-- Fond principal et maillage d'orchestration -->
+  <rect width="1200" height="400" fill="url(#bgK8sDiff)" />
+  <rect width="1200" height="400" fill="url(#k8sGrid)" />
+
+  <!-- Halo de lumière derrière le gouvernail -->
+  <circle cx="900" cy="200" r="180" fill="url(#helmGlow)" />
+
+  <!-- Anneaux d'Orchestration & Lignes d'Ingress/Service Mesh -->
+  <g stroke="#6366f1" stroke-width="1.2" fill="none" opacity="0.35">
+    <ellipse cx="900" cy="200" rx="220" ry="80" stroke-dasharray="6,8" />
+    <ellipse cx="900" cy="200" rx="310" ry="110" stroke-dasharray="4,10" opacity="0.2" />
+    <path d="M 150 220 C 350 150, 500 280, 700 180 T 1100 220" stroke="#38bdf8" stroke-dasharray="4,6" opacity="0.4" />
+  </g>
+
+  <!-- GOUVERNAIL KUBERNETES (Wheel / Helm) en perspective isométrique à droite -->
+  <g transform="translate(900, 200) rotate(-15) scale(1, 0.5)">
+    <!-- Moyeu central du gouvernail -->
+    <circle cx="0" cy="0" r="32" fill="#326ce5" stroke="#a5b4fc" stroke-width="4" />
+    <circle cx="0" cy="0" r="14" fill="#020617" />
+
+    <!-- Les 7 Poignées / Rayons de la roue Kubernetes -->
+    <!-- Rayon 1 -->
+    <g transform="rotate(0)"><rect x="-5" y="-90" width="10" height="90" rx="4" fill="#326ce5" /><circle cx="0" cy="-100" r="12" fill="#60a5fa" /></g>
+    <!-- Rayon 2 -->
+    <g transform="rotate(51.4)"><rect x="-5" y="-90" width="10" height="90" rx="4" fill="#326ce5" /><circle cx="0" cy="-100" r="12" fill="#60a5fa" /></g>
+    <!-- Rayon 3 -->
+    <g transform="rotate(102.8)"><rect x="-5" y="-90" width="10" height="90" rx="4" fill="#326ce5" /><circle cx="0" cy="-100" r="12" fill="#60a5fa" /></g>
+    <!-- Rayon 4 -->
+    <g transform="rotate(154.2)"><rect x="-5" y="-90" width="10" height="90" rx="4" fill="#326ce5" /><circle cx="0" cy="-100" r="12" fill="#60a5fa" /></g>
+    <!-- Rayon 5 -->
+    <g transform="rotate(205.6)"><rect x="-5" y="-90" width="10" height="90" rx="4" fill="#326ce5" /><circle cx="0" cy="-100" r="12" fill="#60a5fa" /></g>
+    <!-- Rayon 6 -->
+    <g transform="rotate(257)"><rect x="-5" y="-90" width="10" height="90" rx="4" fill="#326ce5" /><circle cx="0" cy="-100" r="12" fill="#60a5fa" /></g>
+    <!-- Rayon 7 -->
+    <g transform="rotate(308.4)"><rect x="-5" y="-90" width="10" height="90" rx="4" fill="#326ce5" /><circle cx="0" cy="-100" r="12" fill="#60a5fa" /></g>
+
+    <!-- Anneau extérieur reliant les poignées -->
+    <circle cx="0" cy="0" r="70" fill="none" stroke="#38bdf8" stroke-width="8" opacity="0.9" />
+  </g>
+
+  <!-- PODS ORBITAUX & MICROSERVICES (Sphères orbitales distribuées) -->
+  <!-- Pod 1 : Worker Pod (Cyan) -->
+  <g transform="translate(720, 150)">
+    <circle cx="0" cy="0" r="18" fill="#0284c7" opacity="0.8" />
+    <circle cx="-4" cy="-4" r="14" fill="#38bdf8" opacity="0.9" />
+    <circle cx="0" cy="0" r="26" fill="none" stroke="#38bdf8" stroke-width="1" stroke-dasharray="3,3" />
+  </g>
+
+  <!-- Pod 2 : ReplicaSet (Vert Santé) -->
+  <g transform="translate(1060, 260)">
+    <circle cx="0" cy="0" r="15" fill="#059669" opacity="0.8" />
+    <circle cx="-3" cy="-3" r="11" fill="#34d399" opacity="0.9" />
+  </g>
+
+  <!-- Pod 3 : Control Plane / API Server (Violet/Bleu) -->
+  <g transform="translate(760, 270)">
+    <circle cx="0" cy="0" r="20" fill="#4338ca" opacity="0.85" />
+    <circle cx="-5" cy="-5" r="15" fill="#818cf8" opacity="0.9" />
+  </g>
+
+  <!-- Nœuds réseau secondaires -->
+  <circle cx="560" cy="180" r="5" fill="#38bdf8" opacity="0.8" />
+  <circle cx="560" cy="180" r="14" fill="none" stroke="#38bdf8" stroke-width="1" opacity="0.4" />
+
+  <!-- Masque final d'assombrissement renforcé sur la gauche -->
+  <rect width="1200" height="400" fill="url(#leftTextDarkener)" />
 </svg>
