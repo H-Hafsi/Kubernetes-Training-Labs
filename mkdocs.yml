@@ -18,10 +18,23 @@ theme:
   font:
     text: Source Sans 3
     code: JetBrains Mono
+  # Deux palettes : clair et sombre, avec un bouton de bascule dans l'en-tête.
+  # Le premier affichage suit la préférence du système du visiteur.
   palette:
-    scheme: default
-    primary: custom
-    accent: custom
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Passer en mode sombre
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Passer en mode clair
   features:
     - navigation.tabs
     - navigation.top
@@ -141,8 +154,8 @@ nav:
           - "Lab 12.2 – GitOps avec Argo CD": partie-4-industrialisation/ch12-cicd-gitops/lab-12-2-gitops-argocd.md
       - "Chapitre 13 – Cloud managé et haute disponibilité":
           - Cours: partie-4-industrialisation/ch13-cloud-manage-ha/cours.md
-          - "Lab 13.1 – Cluster sur VMs cloud": partie-4-industrialisation/ch13-cloud-manage-ha/lab-13-1-cluster-vms-cloud.md
-          - "Lab 13.2 – Exposition publique": partie-4-industrialisation/ch13-cloud-manage-ha/lab-13-2-exposition-publique.md
+          - "Lab 13.1 – Haute disponibilité multi-zones": partie-4-industrialisation/ch13-cloud-manage-ha/lab-13-1-cluster-vms-cloud.md
+          - "Lab 13.2 – Exposition sécurisée avec TLS": partie-4-industrialisation/ch13-cloud-manage-ha/lab-13-2-exposition-publique.md
       - "Chapitre 14 – Extensibilité":
           - Cours: partie-4-industrialisation/ch14-extensibilite/cours.md
           - "Lab 14.1 – CRD et opérateur": partie-4-industrialisation/ch14-extensibilite/lab-14-1-crd-operateur.md
