@@ -1,226 +1,190 @@
-# Glossaire
+# Synthèse du cours
 
-Les termes sont classés par ordre alphabétique. La colonne « Chap. » indique le chapitre où la notion est étudiée. Les termes anglais gardés tels quels sont ceux que vous rencontrerez dans la documentation et les outils.
+!!! abstract "Objectifs de la synthèse" - Relier les quinze chapitres dans une vue d'ensemble : du conteneur à l'application industrialisée - Retrouver, pour chaque acquis d'apprentissage (AA1 à AA8), les notions, les objets et les labs correspondants - Disposer d'une méthode de diagnostic et d'une liste de contrôle de mise en production - Préparer l'examen pratique et la soutenance du projet fil rouge - Acquis d'apprentissage visés : **AA1 à AA8**
 
-## A
+Cette page ne remplace pas les chapitres : elle sert de **carte** et de **fiche de révision**. Chaque ligne renvoie à un chapitre ou à un lab où le détail est donné.
 
-| Terme | Définition | Chap. |
-|---|---|---|
-| **Affinité de nœud** (*node affinity*) | Règle portée par un Pod qui l'oriente vers certains nœuds selon leurs labels, de façon obligatoire ou préférée | 10 |
-| **Annotation** | Métadonnée libre attachée à un objet, non utilisée pour le sélectionner (outils, descriptions, empreintes) | 2, 11 |
-| **Anti-affinité de Pod** | Règle qui éloigne un Pod d'autres Pods, pour répartir les réplicas | 10 |
-| **API server** | Point d'entrée du control plane : reçoit, valide et stocke les objets, et sert tous les clients (`kubectl`, kubelet, contrôleurs) | 1 |
-| **Application** (Argo CD) | Objet personnalisé qui indique à Argo CD où lire l'état voulu (dépôt, chemin) et où l'appliquer (cluster, namespace) | 12 |
-| **Argo CD** | Outil GitOps qui synchronise le cluster avec un dépôt Git | 12 |
-| **Autoscaling** | Adaptation automatique du nombre de Pods (HPA), de leur taille (VPA) ou du nombre de nœuds (Cluster Autoscaler) | 10 |
+## 1. La carte du cours
 
-## B
+```mermaid
+flowchart LR
+  P1["Partie 1<br/>Fondations<br/>Architecture, Pods,<br/>Deployments, Services"] --> P2["Partie 2<br/>Configuration,<br/>données, sécurité"]
+  P2 --> P3["Partie 3<br/>Exploitation<br/>HA, observabilité,<br/>autoscaling"]
+  P3 --> P4["Partie 4<br/>Industrialisation<br/>Helm, GitOps, cloud,<br/>extensibilité"]
+  P4 --> F["Projet fil rouge"]
+```
 
-| Terme | Définition | Chap. |
-|---|---|---|
-| **Base** (Kustomize) | Ensemble de manifestes YAML valides, que les overlays personnalisent | 11 |
-| **Build** | Étape d'un pipeline qui construit l'image d'un conteneur | 12 |
+| Partie                                | Question à laquelle elle répond                                                      | Chapitres | Mini-projet                               |
+| ------------------------------------- | ------------------------------------------------------------------------------------ | --------- | ----------------------------------------- |
+| 1. Fondations                         | Comment Kubernetes fonctionne-t-il, et comment déployer et exposer une application ? | 1 à 3     | MP1 : application à deux niveaux          |
+| 2. Configuration, données et sécurité | Comment configurer, persister et protéger une application ?                          | 4 à 7     | MP2 : application trois niveaux sécurisée |
+| 3. Exploitation                       | Comment garder l'application disponible, observable et élastique ?                   | 8 à 10    | MP3 : application sous charge             |
+| 4. Industrialisation                  | Comment automatiser, évaluer et étendre la plateforme ?                              | 11 à 14   | Projet fil rouge                          |
 
-## C
+## 2. Récapitulatif par chapitre
 
-| Terme | Définition | Chap. |
-|---|---|---|
-| **Canary** | Déploiement d'une nouvelle version sur une petite part du trafic avant de la généraliser | 14 |
-| **cert-manager** | Composant tiers qui obtient et renouvelle automatiquement les certificats TLS | 13, 14 |
-| **Chart** | Paquet Helm : templates et valeurs par défaut décrivant une application | 11 |
-| **CI/CD** | Intégration continue (construire et tester à chaque modification) et livraison ou déploiement continus | 12 |
-| **Cluster** | Ensemble formé d'un control plane et de nœuds de travail, géré comme un tout | 1 |
-| **ClusterIP** | Type de Service par défaut : une adresse virtuelle joignable seulement dans le cluster | 3 |
-| **ClusterRole**, **ClusterRoleBinding** | Rôle et liaison de droits valables pour tout le cluster, et non pour un seul namespace | 7 |
-| **ConfigMap** | Objet qui stocke de la configuration non confidentielle (variables, fichiers) | 4 |
-| **Conteneur** | Processus isolé qui embarque son application et ses dépendances, lancé à partir d'une image | 1 |
-| **Contrôleur** | Programme qui compare l'état réel à l'état voulu d'une famille d'objets et agit pour les rapprocher | 1, 14 |
-| **Control plane** | Ensemble des composants qui pilotent le cluster : API server, etcd, scheduler, contrôleurs | 1 |
-| **CoreDNS** | Serveur DNS du cluster : résout les noms des Services | 3 |
-| **cordon** | Commande qui marque un nœud comme non planifiable : aucun nouveau Pod n'y est placé | 8 |
-| **CRD** (*CustomResourceDefinition*) | Déclaration d'un nouveau type d'objet dans l'API, avec son schéma de validation | 14 |
-| **CronJob** | Objet qui crée des Jobs selon un calendrier | 6 |
+| Chap.                          | Notions essentielles                                                       | Objets et outils                                                   | AA       |
+| ------------------------------ | -------------------------------------------------------------------------- | ------------------------------------------------------------------ | -------- |
+| 1. Architecture                | Control plane, nœuds, modèle déclaratif, boucle de réconciliation          | `kubectl`, API server, etcd, kubelet                               | AA1      |
+| 2. Pods et Deployments         | Cycle de vie du Pod, ReplicaSet, rolling update, labels et sélecteurs      | Pod, ReplicaSet, Deployment                                        | AA1, AA2 |
+| 3. Services et réseau          | Découverte de services, DNS interne, routage HTTP                          | Service (ClusterIP, NodePort, LoadBalancer), Ingress, Traefik      | AA3      |
+| 4. Configuration et ressources | Configuration externe, requests et limits, quotas                          | ConfigMap, Secret, ResourceQuota, LimitRange                       | AA4      |
+| 5. Stockage                    | Persistance, provisionnement dynamique, identité stable                    | PV, PVC, StorageClass, StatefulSet, Service headless               | AA4      |
+| 6. Workloads spécialisés       | Tâches ponctuelles ou planifiées, un Pod par nœud, motifs multi-conteneurs | Job, CronJob, DaemonSet, init, sidecar                             | AA2      |
+| 7. Sécurité                    | Moindre privilège, durcissement, isolation réseau                          | RBAC, ServiceAccount, SecurityContext, Pod Security, NetworkPolicy | AA4      |
+| 8. Administration              | Haute disponibilité, sauvegarde, mise à jour, maintenance                  | etcd embarqué, snapshot, `cordon`, `drain`                         | AA1, AA5 |
+| 9. Observabilité et dépannage  | Sondes, journaux, événements, métriques, alertes, méthode de diagnostic    | probes, metrics-server, Prometheus, Grafana                        | AA5, AA6 |
+| 10. Autoscaling et scheduling  | Adaptation à la charge, placement, disponibilité pendant les interruptions | HPA, affinités, taints, PodDisruptionBudget                        | AA6      |
+| 11. Helm et Kustomize          | Paramétrer et empaqueter une application                                   | chart, values, release, base et overlay                            | AA7      |
+| 12. CI/CD et GitOps            | Pipeline, registre d'images, état voulu dans Git                           | GitHub Actions, `ghcr.io`, Argo CD                                 | AA7      |
+| 13. Cloud managé et HA         | Responsabilité partagée, coûts, zones, TLS, exposition publique            | zones, Secret TLS, Ingress TLS                                     | AA8      |
+| 14. Extensibilité              | Étendre l'API, opérateurs, service mesh                                    | CRD, contrôleur, Middleware, sidecar                               | AA8      |
 
-## D
+## 3. Du client au Pod : la vue d'ensemble
 
-| Terme | Définition | Chap. |
-|---|---|---|
-| **DaemonSet** | Objet qui maintient un Pod sur chaque nœud (ou sur certains nœuds) | 6 |
-| **Déclaratif** | Mode de fonctionnement où l'on décrit l'état voulu plutôt que les actions à effectuer | 1 |
-| **Deployment** | Objet qui gère des réplicas d'un Pod sans état et leurs mises à jour progressives | 2 |
-| **Dérive** (*drift*) | Écart entre l'état réel du cluster et l'état voulu décrit dans Git | 12 |
-| **Digest** | Identifiant d'une image (`sha256:...`) qui désigne un contenu précis et ne change jamais | 12 |
-| **drain** | Commande qui vide un nœud de ses Pods en les évinçant proprement, avant une maintenance | 8 |
+Cette vue regroupe les objets vus dans les chapitres 2 à 7. Retrouvez, pour chacun, le chapitre où il est étudié.
 
-## E
+```mermaid
+flowchart TB
+  U["Utilisateur<br/>nom DNS, HTTPS"] --> ING["Ingress (ch. 3, 13)<br/>routage par hôte et chemin, TLS"]
+  ING --> SVC["Service (ch. 3)<br/>nom stable, répartition"]
+  SVC --> POD["Pods (ch. 2)<br/>gérés par un Deployment"]
+  POD --- CFG["ConfigMap, Secret (ch. 4)"]
+  POD --- RES["requests, limits (ch. 4)<br/>sondes (ch. 9)"]
+  POD --- VOL[("PVC, StorageClass (ch. 5)<br/>StatefulSet pour l'état")]
+  POD --- SEC["ServiceAccount, RBAC,<br/>SecurityContext (ch. 7)"]
+  NP["NetworkPolicy (ch. 7)"] -. "filtre les flux" .- POD
+  HPA["HPA (ch. 10)"] -. "ajuste les réplicas" .-> POD
+```
 
-| Terme | Définition | Chap. |
-|---|---|---|
-| **etcd** | Base de données clé-valeur distribuée qui stocke tout l'état du cluster | 1, 8 |
-| **Éviction** | Arrêt d'un Pod pour libérer un nœud, par exemple lors d'un `drain` | 8, 10 |
-| **Événement** (*event*) | Objet qui trace un fait récent sur une ressource (planification, échec, redémarrage) ; premier outil de diagnostic | 9 |
+## 4. Le cycle de vie d'une application
 
-## F
+| Étape              | Questions à se poser                                                     | Chapitres |
+| ------------------ | ------------------------------------------------------------------------ | --------- |
+| **Concevoir**      | Application sans état ou avec état ? Quels composants, quels flux ?      | 2, 5, 6   |
+| **Déployer**       | Image versionnée ? Réplicas ? Stratégie de mise à jour ?                 | 2, 11     |
+| **Exposer**        | Service, Ingress, TLS ? Quel nom d'hôte ?                                | 3, 13     |
+| **Configurer**     | Configuration séparée de l'image ? Secrets hors de Git ?                 | 4, 12     |
+| **Sécuriser**      | Droits minimaux ? Pod durci ? Flux réseau limités ?                      | 7         |
+| **Exploiter**      | Sondes ? Métriques ? Alertes ? Sauvegardes ?                             | 8, 9      |
+| **Adapter**        | Charge variable ? Répartition ? Disponibilité pendant les maintenances ? | 10        |
+| **Industrialiser** | Déploiement reproductible ? Pipeline ? Git comme source de vérité ?      | 11, 12    |
+| **Évaluer**        | Fiabilité, coût, sécurité : le compromis est-il justifié ?               | 13, 14    |
 
-| Terme | Définition | Chap. |
-|---|---|---|
-| **Flannel** | Plugin réseau (CNI) fourni par défaut avec k3s | 1 |
+## 5. Diagnostiquer : l'arbre de décision
 
-## G
+La méthode du chapitre 9 : observer, formuler une hypothèse, vérifier, corriger **une seule chose à la fois**, contrôler.
 
-| Terme | Définition | Chap. |
-|---|---|---|
-| **GitOps** | Pratique où Git est la source de vérité de l'état voulu, appliqué et réconcilié automatiquement par un agent | 12 |
-| **Grafana** | Outil de visualisation de métriques en tableaux de bord | 9 |
+```mermaid
+flowchart TB
+  S["Symptôme"] --> Q{"État du Pod ?"}
+  Q -- "Pending" --> PE["describe pod :<br/>ressources insuffisantes, taint,<br/>affinité, PVC non lié"]
+  Q -- "ImagePullBackOff" --> IM["Nom ou tag de l'image,<br/>registre inaccessible, droits"]
+  Q -- "CrashLoopBackOff" --> CR["logs --previous :<br/>erreur de l'application,<br/>configuration, sonde liveness"]
+  Q -- "Running mais non Ready" --> RD["Sonde readiness en échec :<br/>port, chemin, dépendance"]
+  Q -- "Running et Ready" --> SV{"L'application répond ?"}
+  SV -- "Non" --> EP["Service : sélecteur,<br/>endpoints, port, NetworkPolicy"]
+  SV -- "Non, via l'Ingress" --> IG["Ingress : hôte, chemin,<br/>Service cible, TLS"]
+```
 
-## H
+| Symptôme                | Premier réflexe                                                                      |
+| ----------------------- | ------------------------------------------------------------------------------------ |
+| `Pending`               | `kubectl describe pod` : lire la section `Events`                                    |
+| `CrashLoopBackOff`      | `kubectl logs POD --previous`                                                        |
+| Service injoignable     | `kubectl get endpoints SERVICE` : liste vide = sélecteur incorrect ou Pods non prêts |
+| Accès refusé            | `kubectl auth can-i VERBE RESSOURCE --as=...`                                        |
+| Comportement inexpliqué | `kubectl get events --sort-by=.lastTimestamp`                                        |
+| Charge anormale         | `kubectl top pods`, puis métriques Prometheus                                        |
 
-| Terme | Définition | Chap. |
-|---|---|---|
-| **Haute disponibilité** (HA) | Capacité à rester en service malgré la panne d'un composant | 8, 13 |
-| **Helm** | Gestionnaire de paquets de Kubernetes, fondé sur des charts, des values et des releases | 11 |
-| **HPA** (*HorizontalPodAutoscaler*) | Objet qui ajuste le nombre de réplicas d'une application selon une métrique, le plus souvent le CPU | 10 |
+## 6. Commandes à connaître
 
-## I
+| Besoin                   | Commande                                                                                                        |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------- |
+| Lister, décrire          | `kubectl get RESSOURCE -o wide`, `kubectl describe RESSOURCE NOM`                                               |
+| Appliquer, supprimer     | `kubectl apply -f FICHIER`, `kubectl delete -f FICHIER`                                                         |
+| Documentation d'un champ | `kubectl explain pod.spec.containers`                                                                           |
+| Journaux                 | `kubectl logs POD`, `kubectl logs POD --previous`, `kubectl logs -f POD`                                        |
+| Entrer dans un conteneur | `kubectl exec -it POD -- sh`                                                                                    |
+| Accéder localement       | `kubectl port-forward svc/NOM 8080:80`                                                                          |
+| Mises à jour             | `kubectl rollout status\|history\|undo deployment NOM`                                                          |
+| Mettre à l'échelle       | `kubectl scale deployment NOM --replicas=N`                                                                     |
+| Consommation             | `kubectl top nodes`, `kubectl top pods`                                                                         |
+| Maintenance d'un nœud    | `kubectl cordon NŒUD`, `kubectl drain NŒUD --ignore-daemonsets --delete-emptydir-data`, `kubectl uncordon NŒUD` |
+| Droits                   | `kubectl auth can-i VERBE RESSOURCE --as=...`                                                                   |
+| Sauvegarde etcd (k3s)    | `sudo k3s etcd-snapshot save`, `sudo k3s etcd-snapshot ls`                                                      |
+| Helm                     | `helm install\|upgrade\|rollback\|uninstall RELEASE CHART`, `helm template`, `helm lint`                        |
+| Kustomize                | `kubectl kustomize DOSSIER`, `kubectl apply -k DOSSIER`                                                         |
 
-| Terme | Définition | Chap. |
-|---|---|---|
-| **Image** | Modèle en lecture seule à partir duquel un conteneur est lancé, publié dans un registre | 1, 12 |
-| **Ingress** | Objet qui décrit le routage HTTP(S) de l'extérieur vers les Services, selon l'hôte et le chemin | 3 |
-| **Ingress controller** | Composant qui applique les règles des Ingress (ici Traefik) | 3 |
-| **Init container** | Conteneur exécuté jusqu'à son terme avant le démarrage des conteneurs principaux d'un Pod | 6 |
+!!! tip "Gagner du temps"
+Pour générer un manifeste de départ sans l'écrire de zéro : `kubectl create deployment web --image=nginx:1.26-alpine --dry-run=client -o yaml`. Relisez-le toujours avant de l'appliquer.
 
-## J
+## 7. Liste de contrôle avant une mise en production
 
-| Terme | Définition | Chap. |
-|---|---|---|
-| **Job** | Objet qui exécute une tâche jusqu'à son achèvement | 6 |
+Cette liste sert de **grille d'évaluation** (AA8) pour juger une architecture, la vôtre ou celle d'un autre groupe.
 
-## K
+| Domaine           | Points à vérifier                                                                                                                                         |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Déploiement**   | Images avec version fixée (jamais `latest`) ; stratégie de mise à jour définie ; manifestes dans Git                                                      |
+| **Configuration** | Configuration hors de l'image ; aucun secret en clair dans Git                                                                                            |
+| **Ressources**    | `requests` et `limits` justifiés par des mesures ; quotas dans les namespaces partagés                                                                    |
+| **Fiabilité**     | Plusieurs réplicas répartis sur des nœuds ou des zones ; sondes readiness et liveness ; PodDisruptionBudget ; données sauvegardées et restauration testée |
+| **Sécurité**      | RBAC au moindre privilège ; Pods non root, système de fichiers en lecture seule si possible ; NetworkPolicies ; TLS ; seuls 80 et 443 exposés             |
+| **Observabilité** | Métriques collectées ; tableau de bord ; alertes documentées (symptôme, seuil, action)                                                                    |
+| **Exploitation**  | Procédures de maintenance, de panne et de restauration écrites et essayées                                                                                |
+| **Coût**          | Postes de coût identifiés ; ressources inutilisées supprimées ; dimensionnement proportionné au besoin                                                    |
 
-| Terme | Définition | Chap. |
-|---|---|---|
-| **k3s** | Distribution légère de Kubernetes, utilisée pour les travaux pratiques | 1 |
-| **kubeconfig** | Fichier qui indique à `kubectl` et à Helm comment joindre un cluster et avec quelle identité | 1 |
-| **kubectl** | Outil en ligne de commande pour interagir avec l'API de Kubernetes | 1 |
-| **kubelet** | Agent présent sur chaque nœud, qui lance et surveille les conteneurs des Pods | 1 |
-| **Kustomize** | Outil qui personnalise des manifestes YAML par des overlays et des patches, sans template | 11 |
+## 8. Se préparer à l'évaluation
 
-## L
+| Modalité                                            | Pondération | Ce qui est attendu                                                                                 |
+| --------------------------------------------------- | ----------- | -------------------------------------------------------------------------------------------------- |
+| Contrôle continu : TP notés et quiz                 | 30 %        | Régularité, maîtrise des notions de chaque chapitre                                                |
+| Projet fil rouge : déploiement, rapport, soutenance | 40 %        | Une application complète, justifiée et exploitée ; voir [le projet fil rouge](projet-fil-rouge.md) |
+| Examen pratique chronométré sur cluster             | 30 %        | Savoir-faire autonome sous contrainte de temps                                                     |
 
-| Terme | Définition | Chap. |
-|---|---|---|
-| **Label** | Paire clé-valeur attachée à un objet, utilisée pour le sélectionner | 2 |
-| **Let's Encrypt** | Autorité de certification gratuite et automatisée | 13 |
-| **LimitRange** | Objet qui fixe des valeurs par défaut et des bornes de ressources pour les conteneurs d'un namespace | 4 |
-| **LoadBalancer** | Type de Service qui obtient une adresse externe ; dans un cloud, un load balancer du fournisseur est créé et facturé | 3, 13 |
-| **local-path** | Classe de stockage de k3s, qui utilise un dossier du disque du nœud | 5 |
+Conseils pour l'**examen pratique** :
 
-## M
+- Entraînez-vous à partir de manifestes que vous **générez** (`--dry-run=client -o yaml`) et que vous adaptez, plutôt que d'écrire de mémoire.
+- Utilisez `kubectl explain` pour retrouver un champ, et la documentation officielle quand elle est autorisée.
+- Après chaque modification, **vérifiez** (`get`, `describe`, `curl`) avant de passer à la suite.
+- En cas de blocage, appliquez l'arbre de décision de la section 5 plutôt que de modifier au hasard.
+- Gérez votre temps : traitez d'abord ce que vous maîtrisez.
 
-| Terme | Définition | Chap. |
-|---|---|---|
-| **Manifeste** | Fichier YAML qui décrit un ou plusieurs objets Kubernetes | 1 |
-| **metrics-server** | Composant qui collecte la consommation de CPU et de mémoire des nœuds et des Pods (`kubectl top`, HPA) | 9, 10 |
-| **Middleware** (Traefik) | Objet qui modifie le traitement d'une requête : redirection, limitation de débit | 14 |
-| **mTLS** | TLS mutuel : les deux parties s'authentifient par certificat ; fonction typique d'un service mesh | 14 |
+Conseils pour la **soutenance** :
 
-## N
+- Présentez l'architecture avant les détails : schéma, choix, compromis.
+- **Justifiez** chaque choix par un critère (fiabilité, coût, sécurité) et, si possible, par une mesure.
+- Montrez le fonctionnement par une démonstration préparée, avec un plan de repli.
+- Préparez ce que vous feriez autrement, et les limites de votre solution.
 
-| Terme | Définition | Chap. |
-|---|---|---|
-| **Namespace** | Espace de noms qui isole et regroupe des ressources dans un cluster | 1 |
-| **NetworkPolicy** | Objet qui filtre le trafic réseau entre Pods | 7 |
-| **Nœud** (*node*) | Machine, physique ou virtuelle, qui exécute des Pods | 1 |
-| **NodePort** | Type de Service qui ouvre un port sur tous les nœuds | 3 |
-| **nodeSelector** | Contrainte simple qui oriente un Pod vers les nœuds portant un label donné | 10 |
+## 9. Pour aller plus loin
 
-## O
+- La documentation officielle : [kubernetes.io](https://kubernetes.io/docs/) et [docs.k3s.io](https://docs.k3s.io/).
+- Les ouvrages cités dans le syllabus : _Kubernetes in Action_, _Kubernetes Patterns_, _Production Kubernetes_.
+- Les certifications de la fondation qui maintient Kubernetes : CKAD (développeur d'applications), CKA (administrateur), CKS (sécurité). Les exercices pratiques de ce cours préparent à ce format de travail en ligne de commande.
+- Des sujets non traités ici : Gateway API en profondeur, politiques d'admission, multi-cluster, FinOps, sécurité de la chaîne d'approvisionnement (signature d'images).
 
-| Terme | Définition | Chap. |
-|---|---|---|
-| **Opérateur** | Contrôleur qui encode le savoir-faire d'exploitation d'une application, associé à une CRD | 14 |
-| **Overlay** (Kustomize) | Variante d'une base, qui la modifie par des patches et des transformations | 11 |
+!!! tip "À retenir" - Le cours suit un fil : **déployer, exposer, configurer, sécuriser, exploiter, industrialiser, évaluer**. - Tout repose sur le **modèle déclaratif** et la **réconciliation** : vous décrivez l'état voulu, Kubernetes le maintient. - Face à un incident : **observer, hypothèse, vérifier, corriger une chose, contrôler**. - Une architecture se juge sur sa **fiabilité**, son **coût** et sa **sécurité**, avec des choix **justifiés**. - Ce que vous automatisez (Helm, CI/CD, GitOps) doit rester **reproductible** et **versionné**.
 
-## P
+## Pour vérifier votre compréhension
 
-| Terme | Définition | Chap. |
-|---|---|---|
-| **Patch** | Modification partielle d'un objet ; en Kustomize, fichier qui ne contient que les champs à changer | 11 |
-| **PDB** (*PodDisruptionBudget*) | Objet qui limite le nombre de Pods indisponibles lors d'interruptions volontaires | 10 |
-| **Pipeline** | Suite d'étapes automatisées déclenchée par un événement (build, test, publication, déploiement) | 12 |
-| **Pod** | Plus petite unité déployable : un ou plusieurs conteneurs qui partagent réseau et volumes | 2 |
-| **Pod Security Standards** | Niveaux de sécurité (privileged, baseline, restricted) qui encadrent ce qu'un Pod peut demander | 7 |
-| **Probe** (sonde) | Test périodique d'un conteneur : *readiness* (prêt à recevoir du trafic), *liveness* (à redémarrer ?), *startup* (démarrage terminé ?) | 9 |
-| **Prometheus** | Système de collecte et de stockage de métriques, avec un langage de requêtes (PromQL) et des règles d'alerte | 9 |
-| **Prune** (Argo CD) | Suppression du cluster des objets qui ont disparu de Git | 12 |
-| **PV** (*PersistentVolume*) | Volume de stockage du cluster | 5 |
-| **PVC** (*PersistentVolumeClaim*) | Demande de stockage faite par une application, satisfaite par un PV | 5 |
+??? question "Une application Web a 3 réplicas derrière un Service, mais l'Ingress renvoie `503`. Quelles vérifications, dans quel ordre ?"
+Les Pods sont-ils `Ready` (`get pods`) ? Le Service a-t-il des endpoints (`get endpoints`) ? Le sélecteur du Service correspond-il aux labels des Pods ? L'Ingress désigne-t-il le bon Service et le bon port ? Une NetworkPolicy bloque-t-elle le trafic venant de Traefik ?
 
-## Q
+??? question "Pourquoi les `requests` de CPU sont-ils indispensables à trois fonctions différentes du cours ?"
+Le scheduler s'en sert pour placer les Pods (chapitre 4), le HPA calcule l'utilisation en pourcentage des `requests` (chapitre 10), et les quotas les comptabilisent par namespace (chapitre 4).
 
-| Terme | Définition | Chap. |
-|---|---|---|
-| **Quorum** | Majorité des membres d'etcd nécessaire pour décider : 2 sur 3, 3 sur 5 | 8 |
+??? question "Que protège un PodDisruptionBudget, et que ne protège-t-il pas ?"
+Il protège contre les interruptions **volontaires** (`drain`, mise à jour de nœud) en limitant le nombre de Pods indisponibles. Il ne protège pas d'une panne de nœud ni d'un `kubectl delete pod`.
 
-## R
+??? question "Quelle différence entre un déploiement par pipeline (push) et par GitOps (pull) ?"
+Dans le modèle push, le pipeline accède au cluster pour appliquer les manifestes. Dans le modèle pull, un agent installé dans le cluster lit Git et réconcilie : aucun identifiant du cluster n'est confié à l'extérieur, et la dérive est détectée.
 
-| Terme | Définition | Chap. |
-|---|---|---|
-| **RBAC** | Contrôle d'accès par rôles : qui peut faire quelle action sur quelles ressources | 7 |
-| **Réconciliation** | Boucle qui compare l'état réel à l'état voulu et agit pour les rapprocher | 1, 14 |
-| **Registre** (*registry*) | Serveur qui stocke et distribue des images (Docker Hub, `ghcr.io`) | 12 |
-| **Release** (Helm) | Instance installée d'un chart dans un cluster, avec un nom et un historique de révisions | 11 |
-| **ReplicaSet** | Objet qui maintient un nombre donné de Pods identiques ; géré par un Deployment | 2 |
-| **requests**, **limits** | Ressources garanties pour le placement (`requests`) et plafond de consommation (`limits`) d'un conteneur | 4 |
-| **ResourceQuota** | Objet qui plafonne les ressources totales consommables dans un namespace | 4 |
-| **Révision** | Numéro de version d'une release Helm ou d'un Deployment, incrémenté à chaque changement | 2, 11 |
-| **Rolling update** | Mise à jour progressive : les Pods sont remplacés par vagues, sans interruption du service | 2 |
+??? question "Votre base de données tourne sur un volume `local-path`. Que se passe-t-il si son nœud tombe, et que proposez-vous ?"
+Le Pod ne peut pas redémarrer ailleurs, car le volume est lié au nœud. Il faut répliquer les données (base répliquée ou service managé) et sauvegarder régulièrement, en testant la restauration.
 
-## S
+??? question "Comparez k3s auto-géré et Kubernetes managé pour une petite équipe sans objectif de haute disponibilité strict."
+Le managé délègue le control plane au fournisseur et réduit l'effort d'exploitation, au prix de frais et d'une dépendance au fournisseur. k3s donne la maîtrise totale et un coût de VMs plus bas, mais l'équipe exploite elle-même le control plane. Une petite équipe sans compétence d'exploitation préfère souvent le managé ; un besoin de maîtrise ou de coût minimal préfère k3s. Le choix doit être justifié par les trois critères.
 
-| Terme | Définition | Chap. |
-|---|---|---|
-| **Scheduler** | Composant du control plane qui choisit le nœud de chaque Pod (filtrage, puis score) | 1, 10 |
-| **Secret** | Objet qui stocke des données confidentielles ; encodées en base64, non chiffrées par défaut | 4 |
-| **SecurityContext** | Paramètres de sécurité d'un Pod ou d'un conteneur : utilisateur, privilèges, système de fichiers | 7 |
-| **Selector** (sélecteur) | Expression qui désigne des objets d'après leurs labels | 2 |
-| **Service** | Objet qui donne une adresse et un nom stables à un ensemble de Pods et répartit le trafic entre eux | 3 |
-| **Service mesh** | Couche d'infrastructure qui gère les échanges entre services (mTLS, nouvelles tentatives, trafic, observabilité) grâce à des proxys | 14 |
-| **ServiceAccount** | Identité utilisée par un Pod pour s'adresser à l'API | 7 |
-| **ServiceLB** | Composant de k3s qui permet aux Services `LoadBalancer` d'utiliser l'adresse des nœuds | 3 |
-| **Sidecar** | Conteneur auxiliaire qui s'exécute dans le même Pod que l'application | 6, 14 |
-| **Snapshot** (etcd) | Sauvegarde de l'état du cluster | 8 |
-| **StatefulSet** | Objet pour les applications avec état : identité stable et stockage dédié par réplica | 5 |
-| **StorageClass** | Définition d'un type de stockage et de son mode de provisionnement | 5 |
-| **Sync** (Argo CD) | Application de l'état de Git au cluster ; états `Synced` et `OutOfSync` | 12 |
+## Pour la suite
 
-## T
-
-| Terme | Définition | Chap. |
-|---|---|---|
-| **Tag** | Étiquette d'une image (`1.26-alpine`, identifiant de commit) ; modifiable, contrairement au digest | 12 |
-| **Taint**, **toleration** | Le taint repousse les Pods d'un nœud ; la toleration permet à un Pod de l'accepter | 10 |
-| **TLS** | Protocole qui chiffre une communication et authentifie le serveur par un certificat | 13 |
-| **topologySpreadConstraints** | Contrainte qui répartit les Pods équitablement entre des domaines (nœuds, zones) | 10, 13 |
-| **Traefik** | Ingress controller livré avec k3s | 3 |
-
-## V
-
-| Terme | Définition | Chap. |
-|---|---|---|
-| **Values** (Helm) | Paramètres d'un chart, avec des valeurs par défaut que l'on surcharge par fichier ou `--set` | 11 |
-| **Volume** | Répertoire accessible à un conteneur, dont la durée de vie et la source dépendent de son type | 5 |
-| **VPA** | Composant qui recommande ou ajuste automatiquement les `requests` des conteneurs ; à installer | 10 |
-
-## W
-
-| Terme | Définition | Chap. |
-|---|---|---|
-| **Workflow** (GitHub Actions) | Pipeline décrit dans un fichier YAML du dépôt, exécuté sur un *runner* | 12 |
-
-## Z
-
-| Terme | Définition | Chap. |
-|---|---|---|
-| **Zone de disponibilité** | Domaine de panne indépendant (datacenter) d'une région de cloud ; les réplicas se répartissent entre zones | 13 |
+- [Projet fil rouge](projet-fil-rouge.md)
