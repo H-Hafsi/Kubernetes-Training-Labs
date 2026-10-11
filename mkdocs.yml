@@ -13,8 +13,8 @@ theme:
   name: material
   custom_dir: overrides
   language: fr
-  logo: assets/img/logoisett.png
-  favicon: assets/img/logoisett.png
+  logo: assets/img/K8S.png
+  favicon: assets/img/K8S.png
   font:
     text: Source Sans 3
     code: JetBrains Mono
