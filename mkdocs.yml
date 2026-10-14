@@ -170,7 +170,7 @@ nav:
       - Environnement VMware: annexes/environnement-vmware.md
       - Aide-mémoire kubectl: annexes/aide-memoire-kubectl.md
       - Glossaire: annexes/glossaire.md
-  - Évaluation:
-      - evaluation/index.md
-      - "Partie 1 – Fondations": evaluation/partie-1-fondations.md
-      - "Partie 2 – Configuration / Sécurité": evaluation/partie-2-configuration-securite.md
+  #- Évaluation:
+  #   - evaluation/index.md
+  #   - "Partie 1 – Fondations": evaluation/partie-1-fondations.md
+  #   - "Partie 2 – Configuration / Sécurité": evaluation/partie-2-configuration-securite.md
